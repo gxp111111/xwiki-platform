@@ -3268,7 +3268,6 @@ public class XWikiDocument implements DocumentModelBridge
         setAuthorReference(document.getAuthorReference());
         setContentAuthorReference(document.getContentAuthorReference());
         setContent(document.getContent());
-        setContentDirty(document.isContentDirty());
         setCreationDate(document.getCreationDate());
         setDate(document.getDate());
         setCustomClass(document.getCustomClass());
@@ -3279,7 +3278,6 @@ public class XWikiDocument implements DocumentModelBridge
         setElements(document.getElements());
         setId(document.getId());
         setMeta(document.getMeta());
-        setMetaDataDirty(document.isMetaDataDirty());
         setMostRecent(document.isMostRecent());
         setNew(document.isNew());
         setStore(document.getStore());
@@ -3297,6 +3295,10 @@ public class XWikiDocument implements DocumentModelBridge
         setMinorEdit(document.isMinorEdit());
         setSyntax(document.getSyntax());
         setHidden(document.isHidden());
+
+        setContentDirty(document.isContentDirty());
+        setMetaDataDirty(document.isMetaDataDirty());
+
 
         cloneXObjects(document);
         cloneAttachments(document);
@@ -3334,7 +3336,6 @@ public class XWikiDocument implements DocumentModelBridge
             doc.setAuthorReference(getAuthorReference());
             doc.setContentAuthorReference(getContentAuthorReference());
             doc.setContent(getContent());
-            doc.setContentDirty(isContentDirty());
             doc.setCreationDate(getCreationDate());
             doc.setDate(getDate());
             doc.setCustomClass(getCustomClass());
@@ -3345,7 +3346,6 @@ public class XWikiDocument implements DocumentModelBridge
             doc.setElements(getElements());
             doc.setId(getId());
             doc.setMeta(getMeta());
-            doc.setMetaDataDirty(isMetaDataDirty());
             doc.setMostRecent(isMostRecent());
             doc.setNew(isNew());
             doc.setStore(getStore());
@@ -3361,6 +3361,9 @@ public class XWikiDocument implements DocumentModelBridge
             doc.setMinorEdit(isMinorEdit());
             doc.setSyntax(getSyntax());
             doc.setHidden(isHidden());
+
+            doc.setContentDirty(isContentDirty());
+            doc.setMetaDataDirty(isMetaDataDirty());
 
             BaseClass bClass = getXClass().clone();
             doc.setXClass(bClass);
